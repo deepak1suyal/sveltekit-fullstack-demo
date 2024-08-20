@@ -3,7 +3,7 @@
 </script>
 
 <div
-	class="mt-10 pt-10 w-full max-w-xl p-12 mx-auto rounded-lg shadow-xl dark:bg-white/10 bg-white/30 ring-1 ring-gray-900/5 backdrop-blur-lg"
+	class="mt-10 pt-10 w-full  p-12 mx-auto rounded-lg shadow-xl dark:bg-white/10 bg-white/30 ring-1 ring-gray-900/5 backdrop-blur-lg"
 >
 	<div class="flex items-center justify-between mb-4">
 		<div class="space-y-1">
@@ -22,10 +22,20 @@
 						<p class="font-medium pl-5 text-gray-500 pt-0">{user.email}</p>                        
 					</div>
 				</div>
+				<form method="POST" action="/profiles?/update">
+					
+					<input type="hidden" name="id" id="id" value={user.id}>
+					<input type="text" name="name" id="name" value={user.name}>
+					<input type="text" name="email" id="email" value={user.email}>
+					<button type="submit">
+						<img class="w-32 float-right" src="https://www.pngmart.com/files/8/Update-Button-PNG-Transparent-Photo.png" alt="update"/>
+					</button>
+					</form>
+
                 <form method="POST" action="/profiles?/delete">
                 <input type="hidden" name="id" id="id" value={user.id}>
                 <button type="submit">
-                    <img class="w-4 float-right" src="./trash-can.svg" alt="delete"/>
+                    <img class=" float-right w-6" src="./trash-can.svg" alt="delete"/>
                 </button>
                 </form>
 			</div>
